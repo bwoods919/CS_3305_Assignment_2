@@ -14,7 +14,7 @@ public class Vowels {
 
         boolean run = true;
         int option;
-        String inputStr;
+        String inputStr = "";
 
         printMenu();
         option = input.nextInt();
@@ -22,15 +22,15 @@ public class Vowels {
         while (run) {
 
             switch (option) {
-                case 1:
+                case 1 -> {
                     System.out.println("Enter the string: ");
                     inputStr = input.next();
-                    break;
-                case 2:
-                    break;
-                case 3:
+                }
+                case 2 -> countVowels(inputStr);
+                case 3 -> {
+                    run = false;
                     System.exit(1);
-                    break;
+                }
             }
 
             printMenu();
