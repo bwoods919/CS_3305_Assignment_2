@@ -26,7 +26,7 @@ public class Vowels {
                     System.out.println("Enter the string: ");
                     inputStr = input.next();
                 }
-                case 2 -> countVowels(inputStr);
+                case 2 -> System.out.println("The number of vowels in " + inputStr + " is " +countVowels(inputStr));
                 case 3 -> {
                     run = false;
                     System.exit(1);

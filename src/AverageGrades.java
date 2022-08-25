@@ -5,6 +5,5 @@
 // Assignment: 2
 // IDE Name: IntelliJ
 
-
 public class AverageGrades {
 }
