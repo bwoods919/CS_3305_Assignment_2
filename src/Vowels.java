@@ -9,14 +9,12 @@ import java.util.Scanner;
 
 public class Vowels {
 
-    int count = 0;
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         boolean run = true;
         int option;
-        String inputStr = "";
+        String inputStr;
 
         System.out.println("Enter the string: ");
         inputStr = input.nextLine();
