@@ -30,9 +30,7 @@ public class AverageGrades{
                 case 2 -> {
                     System.out.println();
                     System.out.print("Enter class grades:\t");
-                    for (int i = 0; i < size; i++) {
-                        arr[i] = input.nextInt();
-                    }
+                    for (int i = 0; i < size; i++) arr[i] = input.nextInt();
                 }
                 case 3 -> {
                     System.out.println();
