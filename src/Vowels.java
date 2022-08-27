@@ -16,7 +16,7 @@ public class Vowels {
         int option;
         String inputStr;
 
-        System.out.println("Enter the string: ");
+        System.out.print("Enter the string: ");
         inputStr = input.nextLine();
 
         while (run) {
@@ -26,10 +26,11 @@ public class Vowels {
 
             switch (option) {
                 case 1 -> {
-                    System.out.println("Enter the string: ");
-                    inputStr = input.next();
+                    System.out.print("Enter the string: ");
+                    inputStr = input.nextLine();
                 }
-                case 2 -> System.out.println("The number of vowels in " + inputStr + " is " +countVowels(inputStr, inputStr.length()));
+                case 2 -> System.out.println("You entered string: " + inputStr +
+                        "\nNumber of vowels: " + countVowels(inputStr, inputStr.length()));
                 case 3 -> {
                     run = false;
                     System.exit(1);
@@ -40,9 +41,9 @@ public class Vowels {
 
     static int isVowel(char ch)
     {
-        ch = Character.toUpperCase(ch);
-        if(ch=='A' || ch=='E' || ch=='I' ||
-                ch=='O' || ch=='U')
+        ch = Character.toLowerCase(ch);
+        if(ch=='a' || ch=='e' || ch=='i' ||
+                ch=='o' || ch=='u')
             return 1;
         else return 0;
     }
@@ -51,7 +52,7 @@ public class Vowels {
     static int countVowels(String str, int n)
     {
         if (n == 1)
-            return isVowel(str.charAt(n - 1));
+            return isVowel(str.charAt(0));
 
         return countVowels(str, n-1) + isVowel(str.charAt(n - 1));
     }
@@ -63,6 +64,6 @@ public class Vowels {
         System.out.println("2. Compute number of vowels");
         System.out.println("3. Exit program");
         System.out.println();
-        System.out.println("Enter option number: ");
+        System.out.print("Enter option number: ");
     }
 }
