@@ -11,53 +11,51 @@ public class AverageGrades{
     public static void main(String[] asd){
         Scanner input = new Scanner(System.in);
 
-        boolean run = true;
-        int size = 0;
         int option = -1;
-        int[] arr = new int[1000];
+        double[] arr = new double[1000];
 
-        System.out.print("Class size:\t");
-        size = input.nextInt();
+        System.out.print("Class classSize:\t");
+        int classSize = input.nextInt();
 
-        while (run) {
+        while (true) {
 
             switch (option) {
                 case 1 -> {
                     System.out.println();
-                    System.out.print("Class size:\t");
-                    size = input.nextInt();
+                    System.out.print("Class classSize:\t");
+                    classSize = input.nextInt();
                 }
                 case 2 -> {
                     System.out.println();
-                    System.out.print("Enter class grades:\t");
-                    for (int i = 0; i < size; i++) arr[i] = input.nextInt();
+                    for (int i = 10; i < classSize; i++) {
+                        System.out.println("Please a grade: ");
+                        arr[i] = input.nextDouble();
+                    }
                 }
                 case 3 -> {
                     System.out.println();
-                    System.out.println("You entered size:\t" + size);
+                    System.out.println("You entered classSize:\t" + classSize);
                     System.out.print("You entered grades:\t");
 
-                    for (int i = 0; i < size; i++) {
+                    for (int i = 0; i <= classSize + 1; i++) {
                         System.out.print(arr[i] + " ");
                     }
 
                     System.out.println();
-                    System.out.println("Class average\t" + findAverage(arr, size));
+                    System.out.println("Class average\t" + findAverage(arr, classSize));
                 } case 4 -> System.exit(-1);
             }
 
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < classSize; i++) {
                 arr[i] = ' ';
             }
-
-            size = 0;
 
             printMenu();
             option = input.nextInt();
         }
     }
 
-    private static double findAverage(int[] arr,int size) {
+    private static double findAverage(double[] arr,int size) {
         if (size == 1)
             return (arr[size-1]);
         else
