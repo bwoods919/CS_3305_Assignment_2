@@ -5,17 +5,20 @@
 // Assignment: 2
 // IDE Name: IntelliJ
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AverageGrades{
-    public static void main(String[] asd){
+    public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
 
         int option = -1;
-        double[] arr = new double[1000];
+        int size;
+        int[] arr = new int[100];
 
         System.out.print("Class classSize:\t");
-        int classSize = input.nextInt();
+        size = input.nextInt();
 
         while (true) {
 
@@ -23,31 +26,29 @@ public class AverageGrades{
                 case 1 -> {
                     System.out.println();
                     System.out.print("Class classSize:\t");
-                    classSize = input.nextInt();
+                    size = input.nextInt();
                 }
                 case 2 -> {
                     System.out.println();
-                    for (int i = 10; i < classSize; i++) {
-                        System.out.println("Please a grade: ");
-                        arr[i] = input.nextDouble();
+                    System.out.print("Class Grades:\t");
+                    for (int i = 0; i < size; i++) {
+                        arr[i] = input.nextInt();
                     }
                 }
                 case 3 -> {
                     System.out.println();
-                    System.out.println("You entered classSize:\t" + classSize);
+                    System.out.println("You entered classSize:\t" + size);
                     System.out.print("You entered grades:\t");
 
-                    for (int i = 0; i <= classSize + 1; i++) {
+                    for (int i = 0; i < size; i++) {
                         System.out.print(arr[i] + " ");
                     }
 
                     System.out.println();
-                    System.out.println("Class average\t" + findAverage(arr, classSize));
-                } case 4 -> System.exit(-1);
-            }
+                    System.out.println("Class average\t" + findAverage(arr, size));
 
-            for (int i = 0; i < classSize; i++) {
-                arr[i] = ' ';
+                    Arrays.fill(new int[][]{arr}, null);
+                } case 4 -> System.exit(-1);
             }
 
             printMenu();
@@ -55,11 +56,11 @@ public class AverageGrades{
         }
     }
 
-    private static double findAverage(double[] arr,int size) {
+    private static double findAverage(int[] arr,int size) {
         if (size == 1)
-            return (arr[size-1]);
+            return (double)arr[size-1];
         else
-            return ((findAverage(arr, size-1)*(size-1) + arr[size-1]) / size);
+            return ((double)(findAverage(arr, size-1)*(size-1) + arr[size-1]) / size);
     }
 
     private static void printMenu() {
@@ -70,6 +71,6 @@ public class AverageGrades{
         System.out.println("3. Compute class average");
         System.out.println("4. Exit program");
         System.out.println();
-        System.out.print("Enter option number:");
+        System.out.print("Enter option number: ");
     }
 }
