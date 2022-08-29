@@ -17,27 +17,24 @@ public class AverageGrades{
         int size;
         int[] arr = new int[100];
 
-        System.out.print("Class classSize:\t");
+        System.out.print("Class size:\t");
         size = input.nextInt();
 
         while (true) {
 
             switch (option) {
                 case 1 -> {
-                    System.out.println();
-                    System.out.print("Class classSize:\t");
+                    System.out.print("Class size:\t");
                     size = input.nextInt();
                 }
                 case 2 -> {
-                    System.out.println();
                     System.out.print("Class Grades:\t");
                     for (int i = 0; i < size; i++) {
                         arr[i] = input.nextInt();
                     }
                 }
                 case 3 -> {
-                    System.out.println();
-                    System.out.println("You entered classSize:\t" + size);
+                    System.out.println("You entered size:\t" + size);
                     System.out.print("You entered grades:\t");
 
                     for (int i = 0; i < size; i++) {
@@ -72,5 +69,6 @@ public class AverageGrades{
         System.out.println("4. Exit program");
         System.out.println();
         System.out.print("Enter option number: ");
+        System.out.println();
     }
 }
