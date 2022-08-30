@@ -5,7 +5,6 @@
 // Assignment: 2
 // IDE Name: IntelliJ
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class AverageGrades{
@@ -69,9 +68,9 @@ public class AverageGrades{
     // Recursive method to find average
     private static double findAverage(int[] arr,int size) {
         if (size == 1)
-            return (double)arr[size-1];
+            return arr[size-1];
         else
-            return ((double)(findAverage(arr, size-1)*(size-1) + arr[size-1]) / size);
+            return ((findAverage(arr, size-1)*(size-1) + arr[size-1]) / size);
     }
 
     // Helper method for findAverage
