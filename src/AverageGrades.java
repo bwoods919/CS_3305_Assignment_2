@@ -47,9 +47,9 @@ public class AverageGrades{
                     System.out.println();
                     System.out.println("Class average\t" + findAverage(arr, size));
 
-                    for (int i = 0; i < size; i++) {
+                    for (int i = 0; i < size; i++)
                         arr[i] = 0;
-                    }
+
                 } case 4 -> System.exit(-1);
             }
 
