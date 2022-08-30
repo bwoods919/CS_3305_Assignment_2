@@ -14,10 +14,7 @@ public class Vowels {
         Scanner input = new Scanner(System.in);
 
         int option;
-        String inputStr;
-
-        System.out.print("Enter the string: ");
-        inputStr = input.nextLine();
+        String inputStr = "";
 
         while (true) {
 
@@ -32,10 +29,13 @@ public class Vowels {
                 }
 
                 // print out the output
-                case 2 -> System.out.println("You entered string: " + inputStr +
-                        "\nNumber of vowels: " + countVowels(inputStr, inputStr.length()));
+                case 2 -> {
+                    System.out.println("You entered string: " + inputStr +
+                            "\nNumber of vowels: " + countVowels(inputStr, inputStr.length()));
+                    inputStr = null;
 
-                // Exit call
+                    // Exit call
+                }
                 case 3 ->
                     System.exit(1);
                 }

@@ -36,7 +36,8 @@ public class AverageGrades{
                     System.out.println();
                     System.out.print("Class Grades:\t");
                     for (int i = 0; i < size; i++) {
-                        arr[i] = input.nextInt();
+                        if (input.nextInt() <= 0 && input.nextInt() >= 100)
+                            arr[i] = input.nextInt();
                     }
                 }
 
