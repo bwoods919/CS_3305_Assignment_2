@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class AverageGrades{
+    // Main Method
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -22,12 +23,15 @@ public class AverageGrades{
 
         while (true) {
 
+            // Read in size
             switch (option) {
                 case 1 -> {
                     System.out.println();
                     System.out.print("Class size:\t");
                     size = input.nextInt();
                 }
+
+                // Read in grades
                 case 2 -> {
                     System.out.println();
                     System.out.print("Class Grades:\t");
@@ -35,6 +39,8 @@ public class AverageGrades{
                         arr[i] = input.nextInt();
                     }
                 }
+
+                // call findAverage and print out
                 case 3 -> {
                     System.out.println();
                     System.out.println("You entered size:\t" + size);
@@ -50,6 +56,7 @@ public class AverageGrades{
                     for (int i = 0; i < size; i++)
                         arr[i] = 0;
 
+                    // Exit call
                 } case 4 -> System.exit(-1);
             }
 
@@ -58,6 +65,7 @@ public class AverageGrades{
         }
     }
 
+    // Recursive method to find average
     private static double findAverage(int[] arr,int size) {
         if (size == 1)
             return (double)arr[size-1];
@@ -65,6 +73,7 @@ public class AverageGrades{
             return ((double)(findAverage(arr, size-1)*(size-1) + arr[size-1]) / size);
     }
 
+    // Helper method for findAverage
     private static void printMenu() {
         System.out.println();
         System.out.println("--------MAIN MENU-------");

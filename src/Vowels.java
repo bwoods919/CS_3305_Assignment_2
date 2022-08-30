@@ -9,36 +9,41 @@ import java.util.Scanner;
 
 public class Vowels {
 
+    // Main Method
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        boolean run = true;
         int option;
         String inputStr;
 
         System.out.print("Enter the string: ");
         inputStr = input.nextLine();
 
-        while (run) {
+        while (true) {
 
             printMenu();
             option = input.nextInt();
 
+            // reads the string
             switch (option) {
                 case 1 -> {
                     System.out.print("Enter the string: ");
                     inputStr = input.nextLine();
                 }
+
+                // print out the output
                 case 2 -> System.out.println("You entered string: " + inputStr +
                         "\nNumber of vowels: " + countVowels(inputStr, inputStr.length()));
-                case 3 -> {
-                    run = false;
+
+                // Exit call
+                case 3 ->
                     System.exit(1);
                 }
             }
         }
-    }
 
+
+    // Recurssive method isVowel
     static int isVowel(char ch)
     {
         ch = Character.toLowerCase(ch);
@@ -48,7 +53,7 @@ public class Vowels {
         else return 0;
     }
 
-    // to count total number of vowel from 0 to n
+    // Helper method for isVowel to count the number of vowels
     static int countVowels(String str, int n)
     {
         if (n == 1)
@@ -57,6 +62,7 @@ public class Vowels {
         return countVowels(str, n-1) + isVowel(str.charAt(n - 1));
     }
 
+    // Prints the menu
     public static void printMenu() {
         System.out.println();
         System.out.println("---------MAIN MENU---------");
