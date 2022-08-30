@@ -43,7 +43,7 @@ public class Vowels {
         }
 
 
-    // Recurssive method isVowel
+    // Recursive method isVowel
     static int isVowel(char ch)
     {
         ch = Character.toLowerCase(ch);
