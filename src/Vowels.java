@@ -25,14 +25,17 @@ public class Vowels {
             // reads the string
             switch (option) {
                 case 1 -> {
+                    System.out.println(1
+                    );
                     System.out.print("Enter the string: ");
                     inputStr = input.nextLine();
                 }
 
                 // print out the output
                 case 2 -> {
+                    System.out.println();
                     System.out.println("You entered string: " + inputStr +
-                            "\nNumber of vowels: " + countVowels(inputStr, inputStr.length()));
+                            "\nNumber of vowels:   " + countVowels(inputStr, inputStr.length()));
                     inputStr = null;
 
                     // Exit call

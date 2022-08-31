@@ -22,6 +22,7 @@ public class AverageGrades{
 
         while (true) {
 
+            good = true;
             printMenu();
             option = input.nextInt();
 
