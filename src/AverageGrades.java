@@ -18,6 +18,7 @@ public class AverageGrades{
         int[] arr = new int[100];
         int[] temp = new int[100];
         boolean good = true;
+        double tempDouble;
 
         while (true) {
 
@@ -63,8 +64,11 @@ public class AverageGrades{
                         System.out.print(arr[i] + " ");
                     }
 
+                    tempDouble = findAverage(arr, size);
+
                     System.out.println();
-                    System.out.println("Class average\t" + findAverage(arr, size));
+                    System.out.printf("Class average:\t\t%.2f", tempDouble);
+                    System.out.println();
 
                     for (int i = 0; i < size; i++)
                         arr[i] = 0;
