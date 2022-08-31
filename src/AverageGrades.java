@@ -13,14 +13,16 @@ public class AverageGrades{
 
         Scanner input = new Scanner(System.in);
 
-        int option = -1;
-        int size;
+        int option;
+        int size = 0;
         int[] arr = new int[100];
-
-        System.out.print("Class size:\t");
-        size = input.nextInt();
+        int[] temp = new int[100];
+        boolean good = true;
 
         while (true) {
+
+            printMenu();
+            option = input.nextInt();
 
             // Read in size
             switch (option) {
@@ -34,10 +36,21 @@ public class AverageGrades{
                 case 2 -> {
                     System.out.println();
                     System.out.print("Class Grades:\t");
+
                     for (int i = 0; i < size; i++) {
-                        if (input.nextInt() <= 0 && input.nextInt() >= 100)
-                            arr[i] = input.nextInt();
+                        temp[i] = input.nextInt();
                     }
+
+                    for (int i = 0; i < size; i++) {
+                        if (temp[i] < 0 || temp[i] > 100) {
+                            good = false;
+                            break;
+                        }
+                    }
+
+                    if (!good)
+                        System.out.println("Only grades between 0 - 100 are valid please enter again");
+                    else if (size >= 0) System.arraycopy(temp, 0, arr, 0, size);
                 }
 
                 // call findAverage and print out
@@ -59,9 +72,6 @@ public class AverageGrades{
                     // Exit call
                 } case 4 -> System.exit(-1);
             }
-
-            printMenu();
-            option = input.nextInt();
         }
     }
 

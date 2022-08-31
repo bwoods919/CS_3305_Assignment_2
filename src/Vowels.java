@@ -20,6 +20,7 @@ public class Vowels {
 
             printMenu();
             option = input.nextInt();
+            input.nextLine();
 
             // reads the string
             switch (option) {
